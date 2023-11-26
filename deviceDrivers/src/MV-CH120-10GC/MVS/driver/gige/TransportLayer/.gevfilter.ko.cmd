@@ -1,0 +1,1 @@
+cmd_/opt/MVS/driver/gige/TransportLayer/gevfilter.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -z noexecstack   --build-id  -T ./scripts/module-common.lds -o /opt/MVS/driver/gige/TransportLayer/gevfilter.ko /opt/MVS/driver/gige/TransportLayer/gevfilter.o /opt/MVS/driver/gige/TransportLayer/gevfilter.mod.o;  true

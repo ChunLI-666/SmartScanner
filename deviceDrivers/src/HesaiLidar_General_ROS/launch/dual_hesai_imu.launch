@@ -1,0 +1,117 @@
+<!-- -*- mode: XML -*- -->
+<!-- run hesai lidar in a nodelet manager-->
+<launch>
+
+<!-- Launch first horizontally-installed hesai 32 lidar -->
+<group ns="Pandar0">
+	<arg name="pcap_file"  default=""/>
+	<arg name="server_ip" default="192.168.1.201"/>
+	<arg name="lidar_recv_port"  default="2368"/>
+	<arg name="gps_port"  default="10110"/>
+	<arg name="start_angle"  default="0"/>
+	<!--“lidar_type” represents the model of the lidar-->
+	<arg name="lidar_type" default="PandarXT-32"/>
+	<!--"frame_id" represents the id of the point cloud data published to ROS-->
+	<arg name="frame_id" default="Pandar0"/>
+	<arg name="pcldata_type" default="0"/>
+	<arg name="publish_type" default="points"/>
+	<arg name="timestamp_type" default="realtime"/>
+	<arg name="data_type" default=""/>
+	<arg name="namespace" default="hesailidar0"/>
+	<arg name="lidar_correction_file"  default="$(find hesai_lidar)/config/PandarXT-32.csv"/>
+	<arg name="multicast_ip"  default=""/>
+	<arg name="coordinate_correction_flag"  default="false"/>
+	<arg name="fixed_frame"  default=""/>
+	<arg name="target_frame"  default=""/>
+
+	<node pkg="hesai_lidar" name="hesai_lidar" ns="$(arg namespace)" type="hesai_lidar_node" output="screen" >
+		<param name="pcap_file" type="string" value="$(arg pcap_file)"/>
+		<param name="server_ip" type="string" value="$(arg server_ip)"/>
+		<param name="lidar_recv_port"  type="int" value="$(arg lidar_recv_port)"/>
+		<param name="gps_port"  type="int" value="$(arg gps_port)"/>
+		<param name="start_angle"  type="double" value="$(arg start_angle)"/>
+		<param name="lidar_type"  type="string" value="$(arg lidar_type)"/>
+		<param name="frame_id"  type="string" value="$(arg frame_id)"/>
+		<param name="pcldata_type"  type="int" value="$(arg pcldata_type)"/>
+		<param name="publish_type"  type="string" value="$(arg publish_type)"/>
+		<param name="timestamp_type"  type="string" value="$(arg timestamp_type)"/>
+		<param name="data_type"  type="string" value="$(arg data_type)"/>
+		<param name="lidar_correction_file"  type="string" value="$(arg lidar_correction_file)"/>
+		<param name="multicast_ip"  type="string" value="$(arg multicast_ip)"/>
+		<param name="coordinate_correction_flag"  type="bool" value="$(arg coordinate_correction_flag)"/>
+		<param name="fixed_frame"  type="string" value="$(arg fixed_frame)"/>
+		<param name="target_frame"  type="string" value="$(arg target_frame)"/>
+	</node>
+</group>
+
+<!-- Launch second vertically-installed hesai 32 lidar -->
+<group ns="Pandar1">
+	<arg name="pcap_file"  default=""/>
+	<arg name="server_ip" default="192.168.2.201"/>
+	<arg name="lidar_recv_port"  default="2370"/>
+	<arg name="gps_port"  default="10110"/>
+	<arg name="start_angle"  default="0"/>
+	<!--“lidar_type” represents the model of the lidar-->
+	<arg name="lidar_type" default="PandarXT-32"/>
+	<!--"frame_id" represents the id of the point cloud data published to ROS-->
+	<arg name="frame_id" default="Pandar1"/>
+	<arg name="pcldata_type" default="0"/>
+	<arg name="publish_type" default="points"/>
+	<arg name="timestamp_type" default="realtime"/>
+	<arg name="data_type" default=""/>
+	<arg name="namespace" default="hesailidar1"/>
+	<arg name="lidar_correction_file"  default="$(find hesai_lidar)/config/PandarXT-32.csv"/>
+	<arg name="multicast_ip"  default=""/>
+	<arg name="coordinate_correction_flag"  default="false"/>
+	<arg name="fixed_frame"  default=""/>
+	<arg name="target_frame"  default=""/>
+
+	<node pkg="hesai_lidar" name="hesai_lidar" ns="$(arg namespace)" type="hesai_lidar_node" output="screen" >
+		<param name="pcap_file" type="string" value="$(arg pcap_file)"/>
+		<param name="server_ip" type="string" value="$(arg server_ip)"/>
+		<param name="lidar_recv_port"  type="int" value="$(arg lidar_recv_port)"/>
+		<param name="gps_port"  type="int" value="$(arg gps_port)"/>
+		<param name="start_angle"  type="double" value="$(arg start_angle)"/>
+		<param name="lidar_type"  type="string" value="$(arg lidar_type)"/>
+		<param name="frame_id"  type="string" value="$(arg frame_id)"/>
+		<param name="pcldata_type"  type="int" value="$(arg pcldata_type)"/>
+		<param name="publish_type"  type="string" value="$(arg publish_type)"/>
+		<param name="timestamp_type"  type="string" value="$(arg timestamp_type)"/>
+		<param name="data_type"  type="string" value="$(arg data_type)"/>
+		<param name="lidar_correction_file"  type="string" value="$(arg lidar_correction_file)"/>
+		<param name="multicast_ip"  type="string" value="$(arg multicast_ip)"/>
+		<param name="coordinate_correction_flag"  type="bool" value="$(arg coordinate_correction_flag)"/>
+		<param name="fixed_frame"  type="string" value="$(arg fixed_frame)"/>
+		<param name="target_frame"  type="string" value="$(arg target_frame)"/>
+	</node>
+</group>
+
+<!-- 两个雷达的外参, [x y z qx qy qz qw frame_id child_frame_id]  period_in_ms -->
+<node pkg="tf" type="static_transform_publisher" name="tf_trans1" args="-0.001119 0.18382 -0.132686  0.0080588 -0.71265495 -0.70610195 0.00335037 Pandar0 Pandar1 100" />
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="tf_trans2" args="0 0 0 0 0 0 Pandar0 base_link" />
+
+<!--
+<node pkg="uwb_serial" type="serial_example" name="imu_HWT905" args="/dev/ttyUSB0 115200"/>
+<node pkg="imu_complementary_filter" type="complementary_filter_node" name="complementary_filter_gain_node" args="/imu/data_raw:=/imu_HWT905/imu"/>
+-->
+
+<!-- imu型号，默认 normal -->
+<!-- hcan请选择230400波特率 -->
+<arg name="type" default="normal" doc="type [normal, modbus, hmodbus, can, hcan]"/>
+
+<!-- imu 对应 python 文件 -->
+<node pkg="wit_ros_imu" type="wit_$(arg type)_ros.py" name="imu" output="screen">
+	<param name="port"               type = "str"    value="/dev/ttyUSB0"/>
+	<param name="baud"               type = "int"    value="115200"/>
+</node>
+
+<!--
+<node pkg="wit_ros_imu" type="get_imu_rpy.py" name="get_imu" output="screen">
+</node>
+-->
+
+<!-- web server for dashboard at port:8888 -->
+<node pkg="rosboard" type="rosboard_node" name="rosboard_node" />
+
+</launch>
