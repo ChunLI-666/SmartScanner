@@ -1,0 +1,82 @@
+icl2sgh@SGH-C-0013T:~/project/SmartScanner/dataCollect_ws$ rosrun camera_calibration cameracalibrator.py --size 6x5 --square 0.103 image:=/hikrobot_camera/rgb camera:=/hikrobot_camera/camera_info  --no-service-check
+*** Added sample 1, p_x = 0.765, p_y = 0.437, p_size = 0.323, skew = 0.074
+*** Added sample 2, p_x = 0.606, p_y = 0.401, p_size = 0.319, skew = 0.044
+*** Added sample 3, p_x = 0.507, p_y = 0.472, p_size = 0.316, skew = 0.012
+*** Added sample 4, p_x = 0.674, p_y = 0.330, p_size = 0.319, skew = 0.114
+*** Added sample 5, p_x = 0.709, p_y = 0.552, p_size = 0.322, skew = 0.112
+*** Added sample 6, p_x = 0.576, p_y = 0.594, p_size = 0.323, skew = 0.081
+*** Added sample 7, p_x = 0.571, p_y = 0.521, p_size = 0.343, skew = 0.186
+*** Added sample 8, p_x = 0.531, p_y = 0.302, p_size = 0.370, skew = 0.058
+*** Added sample 9, p_x = 0.420, p_y = 0.182, p_size = 0.383, skew = 0.093
+*** Added sample 10, p_x = 0.411, p_y = 0.442, p_size = 0.395, skew = 0.014
+*** Added sample 11, p_x = 0.320, p_y = 0.542, p_size = 0.389, skew = 0.003
+*** Added sample 12, p_x = 0.488, p_y = 0.465, p_size = 0.426, skew = 0.087
+*** Added sample 13, p_x = 0.402, p_y = 0.649, p_size = 0.427, skew = 0.021
+*** Added sample 14, p_x = 0.296, p_y = 0.406, p_size = 0.443, skew = 0.002
+*** Added sample 15, p_x = 0.383, p_y = 0.399, p_size = 0.497, skew = 0.074
+*** Added sample 16, p_x = 0.274, p_y = 0.348, p_size = 0.528, skew = 0.059
+*** Added sample 17, p_x = 0.302, p_y = 0.502, p_size = 0.539, skew = 0.051
+*** Added sample 18, p_x = 0.388, p_y = 0.620, p_size = 0.548, skew = 0.066
+*** Added sample 19, p_x = 0.572, p_y = 0.645, p_size = 0.548, skew = 0.039
+*** Added sample 20, p_x = 0.201, p_y = 0.172, p_size = 0.559, skew = 0.020
+*** Added sample 21, p_x = 0.280, p_y = 0.672, p_size = 0.497, skew = 0.068
+*** Added sample 22, p_x = 0.377, p_y = 0.786, p_size = 0.432, skew = 0.058
+*** Added sample 23, p_x = 0.444, p_y = 0.579, p_size = 0.381, skew = 0.064
+*** Added sample 24, p_x = 0.133, p_y = 0.668, p_size = 0.351, skew = 0.036
+*** Added sample 25, p_x = 0.274, p_y = 0.702, p_size = 0.346, skew = 0.000
+*** Added sample 26, p_x = 0.341, p_y = 0.864, p_size = 0.344, skew = 0.009
+*** Added sample 27, p_x = 0.510, p_y = 0.748, p_size = 0.332, skew = 0.120
+*** Added sample 28, p_x = 0.137, p_y = 0.350, p_size = 0.350, skew = 0.041
+*** Added sample 29, p_x = 0.244, p_y = 0.458, p_size = 0.349, skew = 0.048
+*** Added sample 30, p_x = 0.869, p_y = 0.359, p_size = 0.357, skew = 0.189
+*** Added sample 31, p_x = 0.642, p_y = 0.147, p_size = 0.325, skew = 0.084
+*** Added sample 32, p_x = 0.416, p_y = 0.265, p_size = 0.320, skew = 0.002
+*** Added sample 33, p_x = 0.238, p_y = 0.639, p_size = 0.315, skew = 0.097
+*** Added sample 34, p_x = 0.758, p_y = 0.904, p_size = 0.327, skew = 0.095
+*** Added sample 35, p_x = 0.842, p_y = 0.764, p_size = 0.334, skew = 0.138
+*** Added sample 36, p_x = 0.861, p_y = 0.824, p_size = 0.365, skew = 0.310
+*** Added sample 37, p_x = 0.442, p_y = 0.748, p_size = 0.356, skew = 0.006
+*** Added sample 38, p_x = 0.666, p_y = 0.654, p_size = 0.368, skew = 0.096
+*** Added sample 39, p_x = 0.725, p_y = 0.775, p_size = 0.370, skew = 0.053
+*** Added sample 40, p_x = 0.858, p_y = 0.132, p_size = 0.380, skew = 0.148
+*** Added sample 41, p_x = 0.319, p_y = 0.379, p_size = 0.353, skew = 0.104
+*** Added sample 42, p_x = 0.203, p_y = 0.277, p_size = 0.432, skew = 0.021
+*** Added sample 43, p_x = 0.629, p_y = 0.434, p_size = 0.418, skew = 0.134
+*** Added sample 44, p_x = 0.812, p_y = 0.460, p_size = 0.459, skew = 0.157
+**** Calibrating ****
+mono pinhole calibration...
+D = [0.11674516118453904, 0.06778670121311109, 0.018961348889644722, 0.024883625472050544, 0.0]
+K = [6234.333168935969, 0.0, 2349.884367473377, 0.0, 6215.183867704229, 2015.5980581716599, 0.0, 0.0, 1.0]
+R = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P = [6326.8583984375, 0.0, 2391.0105115152837, 0.0, 0.0, 6355.33447265625, 2033.7948691223573, 0.0, 0.0, 0.0, 1.0, 0.0]
+None
+# oST version 5.0 parameters
+
+
+[image]
+
+width
+4096
+
+height
+3000
+
+[narrow_stereo]
+
+camera matrix
+6234.333169 0.000000 2349.884367
+0.000000 6215.183868 2015.598058
+0.000000 0.000000 1.000000
+
+distortion
+0.116745 0.067787 0.018961 0.024884 0.000000
+
+rectification
+1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000
+
+projection
+6326.858398 0.000000 2391.010512 0.000000
+0.000000 6355.334473 2033.794869 0.000000
+0.000000 0.000000 1.000000 0.000000
