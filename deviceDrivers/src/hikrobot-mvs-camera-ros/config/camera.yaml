@@ -15,7 +15,7 @@ AutoExposureTimeUpperLimit: 16777
 
 BalanceWhiteAuto: 1
 
-Brightness: 100
+Brightness: 75
 
 GammaEnable: true
 Gamma: 0.7              #伽马因子
