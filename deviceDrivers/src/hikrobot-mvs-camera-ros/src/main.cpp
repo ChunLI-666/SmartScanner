@@ -85,11 +85,9 @@ int main(int argc, char **argv)
 
     while (ros::ok())
     {
-
-        loop_rate.sleep();
-        ros::spinOnce();
-
-        MVS_cap.ReadImg(src);
+        // ros::spinOnce();
+        ros::Time grab_img_time; 
+        MVS_cap.ReadImg(src, grab_img_time); 
         if (src.empty())
         {
             continue;
@@ -102,7 +100,8 @@ int main(int argc, char **argv)
         cv_ptr->image = src;
 // #endif
         image_msg = *(cv_ptr->toImageMsg());
-        image_msg.header.stamp = ros::Time::now();  // ros发出的时间不是快门时间
+        // image_msg.header.stamp = ros::Time::now();  // ros发出的时间不是快门时间
+        image_msg.header.stamp = grab_img_time;
         image_msg.header.frame_id = "hikrobot_camera";
 
         camera_info_msg.header.frame_id = image_msg.header.frame_id;
@@ -112,6 +111,7 @@ int main(int argc, char **argv)
         image_pub.publish(image_msg);
         camera_info_pub.publish(camera_info_msg);
 
+        loop_rate.sleep();
         //*******************************************************************************************************************/
     }
     return 0;

@@ -238,6 +238,7 @@ namespace camera {
 
             int setValue(float value) {
                 return MV_CC_SetGamma(handle_, value);
+                // return MV_CC_SetGammaValue(handle_, value);
             }
     };
 

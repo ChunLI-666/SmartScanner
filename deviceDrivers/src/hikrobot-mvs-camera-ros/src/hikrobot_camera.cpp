@@ -3,6 +3,8 @@
 #include "hikrobot_camera.h"
 #include <chrono>
 #include <cmath>
+#include <ros/ros.h>
+
 
 namespace camera {
     //********** frame ************************************/
@@ -14,6 +16,7 @@ namespace camera {
     
     int height;
     int width;
+    ros::Time grab_img_time;
 
     Camera::Camera(ros::NodeHandle &node)
     {
@@ -350,7 +353,7 @@ namespace camera {
         return true;
     }
 
-    void Camera::ReadImg(cv::Mat &image)
+    void Camera::ReadImg(cv::Mat &image, ros::Time &time)
     {
 
         pthread_mutex_lock(&mutex);
@@ -369,9 +372,11 @@ namespace camera {
             // frame_empty = 1;
             if(resize_enable_) {
                 image_resize(camera::frame, image);
+                time = grab_img_time;
             }
             else {
                 image = camera::frame;
+                time = grab_img_time;
             }
             frame_empty = 1;
         }
@@ -390,8 +395,12 @@ namespace camera {
         int image_empty_count = 0; //空图帧数
         while (ros::ok())
         {
-            start = static_cast<double>(cv::getTickCount());
+            // start = static_cast<double>(cv::getTickCount());
+            start = ros::Time::now().toSec();
             nRet = MV_CC_GetOneFrameTimeout(p_handle, m_pBufForDriver, MAX_IMAGE_DATA_SIZE, &stImageInfo, 15);
+            // grab_img_time = (ros::Time::now().toSec() - start) / 2  + start;
+            grab_img_time = ros::Time().fromSec((ros::Time::now().toSec() - start) / 2  + start);
+
             if (nRet != MV_OK)
             {
                 if (++image_empty_count > 100)
@@ -417,8 +426,9 @@ namespace camera {
             camera::frame = cv::Mat(stImageInfo.nHeight, stImageInfo.nWidth, CV_8UC3, m_pBufForSaveImage).clone(); //tmp.clone();
             frame_empty = 0;
             pthread_mutex_unlock(&mutex);
-            double time = ((double)cv::getTickCount() - start) / cv::getTickFrequency();
-            ROS_INFO("Grap one image time: %lf", time);
+            // double time = ((double)cv::getTickCount() - start) / cv::getTickFrequency();
+            double time = ros::Time::now().toSec() - start;
+            ROS_DEBUG("Grap one image time: %lf", time);
             //*************************************testing img********************************//
             // std::cout << "HK_camera,Time:" << time << "\tFPS:" << 1 / time << std::endl;
             // cv::imshow("HK vision",frame);

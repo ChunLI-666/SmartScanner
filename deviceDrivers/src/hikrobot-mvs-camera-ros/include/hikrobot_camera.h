@@ -41,7 +41,7 @@ namespace camera
         //********** 恢复默认参数 *************************/
         bool reset();
         //********** 读图1个相机的原始图像 ********************************/
-        void ReadImg(cv::Mat &image);
+        void ReadImg(cv::Mat &image, ros::Time &time);
 
         int get_width();
         int get_height();

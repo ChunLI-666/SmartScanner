@@ -5,20 +5,17 @@ Offset_x: 0             #X方向偏置
 Offset_y: 0             #Y方向偏置
 
 FrameRateEnable: true   #使能 
-FrameRate: 7           #帧率
+FrameRate: 8            #帧率, from 1 - 8 (maximum)
 
-# ExposureTime: 50000     #曝光时间
-# ExposureAuto: true
-ExposureAuto: true
+ExposureAuto: false
+ExposureTime: 8000      #For indoor environment, the idea time is around 4000 - 5000, depends on the indoor lighting level
+# ExposureTime: 8000      #For outdoor environment, the idea time is around 2000 - 3000 , depends on the outdoor lighting level
 AutoExposureTimeLowerLimit: 100
-AutoExposureTimeUpperLimit: 16777
+AutoExposureTimeUpperLimit: 8000
 
 BalanceWhiteAuto: 1
 
-Brightness: 75
-
-GammaEnable: false
-Gamma: 0.7              #伽马因子
+Brightness: 100         # Image brightness, default 100
 
 GainAuto: 2             #亮度的固定增益
 
@@ -28,5 +25,5 @@ ResizeEnable: false
 DestinationHeight: 640
 DestinationWidth: 640
 
-SaturationEnable: false
+SaturationEnable: true
 Saturation: 128          #饱和度
