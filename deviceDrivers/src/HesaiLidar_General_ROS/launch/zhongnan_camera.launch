@@ -1,0 +1,38 @@
+<!-- -*- mode: XML -*- -->
+<!-- run hesai lidar in a nodelet manager-->
+<launch>
+
+<!-- Launch Hikrobot camera  -->
+<rosparam file="$(find hikrobot_camera)/config/camera-indoor.yaml" command="load" />
+<node pkg="hikrobot_camera" type="hikrobot_camera" name="hikrobot_camera" respawn="true" output="screen" />
+
+<!-- imu型号，默认 normal -->
+<!-- hcan请选择230400波特率 -->
+<arg name="type" default="normal" doc="type [normal, modbus, hmodbus, can, hcan]"/>
+
+<!-- imu 对应 python 文件 -->
+<node pkg="wit_ros_imu" type="wit_$(arg type)_ros.py" name="imu" output="screen">
+	<param name="port"               type = "str"    value="/dev/ttyUSB0"/>
+	<param name="baud"               type = "int"    value="115200"/>
+</node>
+
+<!-- T_baselink_wrt_cam,  [x y z qx qy qz qw frame_id child_frame_id]  period_in_ms -->
+<node pkg="tf" type="static_transform_publisher" name="T_cam_wrt_baselink" 
+	args="0 0 0 0 0 0 1 base_link hikrobot_camera 100" />
+
+<!-- T_cam_wrt_lidar,  [x y z qx qy qz qw frame_id child_frame_id]  period_in_ms-->
+<node pkg="tf" type="static_transform_publisher" name="T_cam_wrt_lidar" 
+	args="0 0 0 0 0 0 1 hikrobot_camera Pandar 100" />
+
+<!-- T_lidar_wrt_imu,  [x y z qx qy qz qw frame_id child_frame_id]  period_in_ms -->
+<node pkg="tf" type="static_transform_publisher" name="T_lidar_wrt_imu" 
+	args="0 0 0 0 0 0 1 Pandar imu 100" />
+
+<!-- 
+pkg指出ROS应该运行哪个pkg
+type是可执行文件的名称
+name则是可以任意给出的，它覆盖了原文件中ros::init指定的node的名字 
+-->
+<node pkg="rviz" type="rviz" name="rviz" args="-d $(find hikrobot_camera)/rviz_config/smart_scanner.rviz" />
+
+</launch>

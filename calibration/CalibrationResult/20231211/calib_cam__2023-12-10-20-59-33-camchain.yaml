@@ -1,0 +1,8 @@
+cam0:
+  cam_overlaps: []
+  camera_model: pinhole
+  distortion_coeffs: [0.3253005942710306, 0.3535881463790802, -0.7936536302210133, 1.8973044991905739]
+  distortion_model: equidistant
+  intrinsics: [4819.642849653861, 4819.612292085981, 2044.910128578987, 1535.2966202905343]
+  resolution: [4096, 3000]
+  rostopic: /hikrobot_camera/rgb

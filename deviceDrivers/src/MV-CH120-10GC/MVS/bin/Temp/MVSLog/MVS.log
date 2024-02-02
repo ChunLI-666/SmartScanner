@@ -1,0 +1,16 @@
+[ERROR] 2023-11-24 16:45:22.546 --> < CommonInterface.cpp, line:477 >   loadFavoritesXml failed. 
+[WARN] 2023-11-24 16:45:22.657 --> < , line:0 >   QLayout: Cannot add a null widget to QVBoxLayout/ 
+[WARN] 2023-11-24 16:46:51.940 --> < , line:0 >   QLayout::addChildLayout: layout "" already has a parent 
+[WARN] 2023-11-24 16:46:51.940 --> < , line:0 >   QLayout::addChildLayout: layout "" already has a parent 
+[WARN] 2023-11-24 16:46:56.050 --> < , line:0 >   QFont::setPixelSize: Pixel size <= 0 (-1) 
+[WARN] 2023-11-24 16:47:13.548 --> < , line:0 >   QLayout::addChildLayout: layout "" already has a parent 
+[WARN] 2023-11-24 16:47:13.548 --> < , line:0 >   QLayout::addChildLayout: layout "" already has a parent 
+[WARN] 2023-11-24 17:10:44.599 --> < , line:0 >   QPainter::begin: Paint device returned engine == 0, type: 2 
+[WARN] 2023-11-24 17:10:44.599 --> < , line:0 >   QPainter::setRenderHint: Painter must be active to set rendering hints 
+[WARN] 2023-11-24 17:10:44.600 --> < , line:0 >   QPainter::setPen: Painter not active 
+[WARN] 2023-11-24 17:10:44.600 --> < , line:0 >   QPainter::fillPath: Painter not active 
+[WARN] 2023-11-24 17:10:51.656 --> < , line:0 >   QPainter::begin: Paint device returned engine == 0, type: 2 
+[WARN] 2023-11-24 17:10:51.656 --> < , line:0 >   QPainter::setRenderHint: Painter must be active to set rendering hints 
+[WARN] 2023-11-24 17:10:51.656 --> < , line:0 >   QPainter::setPen: Painter not active 
+[WARN] 2023-11-24 17:10:51.656 --> < , line:0 >   QPainter::fillPath: Painter not active 
+[WARN] 2023-11-24 17:12:56.667 --> < , line:0 >   QXcbConnection: XCB error: 148 (Unknown), sequence: 286, resource id: 0, major code: 140 (Unknown), minor code: 20 

@@ -1,0 +1,20 @@
+Calibration results 
+====================
+Camera-system parameters:
+cam0 (/hikrobot_camera/rgb):
+    type: <class 'aslam_cv.libaslam_cv_python.EquidistantDistortedPinholeCameraGeometry'>
+    distortion: [ 0.32530059  0.35358815 -0.79365363  1.8973045 ] +- [0.00706656 0.13025656 0.94060052 2.28718017]
+    projection: [4819.64284965 4819.61229209 2044.91012858 1535.29662029] +- [3.30841712 3.24588855 1.00128757 1.0981787 ]
+    reprojection error: [-0.000002, -0.000003] +- [0.567882, 0.375692]
+
+
+
+Target configuration
+====================
+
+  Type: aprilgrid
+  Tags: 
+    Rows: 6
+    Cols: 6
+    Size: 0.088 [m]
+    Spacing 0.026399999999999996 [m]

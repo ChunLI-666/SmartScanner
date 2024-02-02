@@ -1,0 +1,48 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/icl2sgh/slam_ws_new/devel/include/**",
+        "/home/icl2sgh/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam_common/bagmode/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/change_detection/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/change_detection_msgs/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/cr_gridmap/include/**",
+        "/home/icl2sgh/slam_ws_new/src/geographic_transform/include/**",
+        "/home/icl2sgh/catkin_ws/src/imu_tools/imu_complementary_filter/include/**",
+        "/home/icl2sgh/catkin_ws/src/imu_tools/imu_filter_madgwick/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/lidar_slam/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/lidar_slam_msgs/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/lidar_slam_plugins/include/**",
+        "/home/icl2sgh/slam_ws_new/src/ndt/ndt/include/**",
+        "/home/icl2sgh/slam_ws_new/src/ndt/ndt_plugins/include/**",
+        "/home/icl2sgh/slam_ws_new/src/ndt/ndt_ros/include/**",
+        "/home/icl2sgh/slam_ws_new/src/ros_compat/ros_compat/include/**",
+        "/home/icl2sgh/slam_ws_new/src/ros_compat/ros_compat_demo/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam_common/scan_matcher/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/slam_adma_plugins/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam_common/slam_common/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/slam_control/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/slam_graph_inspection/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam2d/slam_ground_truth/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam_common/slam_introspection/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam_rviz/slam_rviz_plugin/include/**",
+        "/home/icl2sgh/slam_ws_new/src/slam_common/topicmode/include/**",
+        "/home/icl2sgh/catkin_ws/src/imu_HWT905/uwb_serial/include/**",
+        "/home/icl2sgh/slam_ws_new/src/pjmp_msgs/messages/vehicle_msgs/include/**",
+        "/home/icl2sgh/slam_ws_new/src/velodyne/velodyne_driver/include/**",
+        "/home/icl2sgh/slam_ws_new/src/velodyne/velodyne_laserscan/include/**",
+        "/home/icl2sgh/slam_ws_new/src/velodyne/velodyne_pcl/include/**",
+        "/home/icl2sgh/slam_ws_new/src/velodyne/velodyne_pointcloud/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
