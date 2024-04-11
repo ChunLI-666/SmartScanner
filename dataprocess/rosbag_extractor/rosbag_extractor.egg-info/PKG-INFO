@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: rosbag-extractor
+Version: 0.1.0
+Requires-Dist: opencv-python
+Requires-Dist: open3d
+Requires-Dist: pycryptodomex
+Requires-Dist: python-gnupg
+Requires-Dist: rospkg
+Requires-Dist: tqdm
+Requires-Dist: loguru

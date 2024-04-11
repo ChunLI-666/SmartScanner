@@ -1,0 +1,15 @@
+# opencv-python
+# open3d
+# pycryptodomex
+# python-gnupg
+# rospkg
+# tqdm
+# loguru
+# subprocess
+opencv
+# open3d
+pycryptodomex
+# python-gnupg
+# rospkg
+tqdm
+loguru

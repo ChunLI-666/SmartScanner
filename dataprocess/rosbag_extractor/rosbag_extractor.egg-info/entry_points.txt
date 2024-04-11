@@ -1,0 +1,3 @@
+[console_scripts]
+image_extractor = rosbag_extractor.extract_images:main
+point_cloud_extractor = rosbag_extractor.extract_pcds:main

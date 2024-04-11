@@ -1,0 +1,7 @@
+opencv-python
+open3d
+pycryptodomex
+python-gnupg
+rospkg
+tqdm
+loguru

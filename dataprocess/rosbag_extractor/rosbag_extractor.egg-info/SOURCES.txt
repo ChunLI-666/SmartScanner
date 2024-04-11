@@ -1,0 +1,10 @@
+setup.py
+rosbag_extractor/__init__.py
+rosbag_extractor/extract_images.py
+rosbag_extractor/extract_pcds.py
+rosbag_extractor.egg-info/PKG-INFO
+rosbag_extractor.egg-info/SOURCES.txt
+rosbag_extractor.egg-info/dependency_links.txt
+rosbag_extractor.egg-info/entry_points.txt
+rosbag_extractor.egg-info/requires.txt
+rosbag_extractor.egg-info/top_level.txt
