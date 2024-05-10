@@ -61,7 +61,8 @@ def extract_and_save_images(bag_file, output_folder, topic, img_format):
                 try:
                     # cv_image = bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
                     cv_image = bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
-                    timestamp = t.to_sec()
+                    # timestamp = t.to_sec()
+                    timestamp = msg.header.stamp.to_sec()
                     image_filename = os.path.join(output_folder, f"{timestamp:.6f}.{img_format}")
                     cv2.imwrite(image_filename, cv_image)
                     # logger.info(f"Successfully saved {image_filename}")

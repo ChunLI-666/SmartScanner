@@ -58,7 +58,9 @@ xhost +local:docker
 # start ros2 container
 docker run -it \
     --workdir=/sandbox/ \
+    --gpus all \
     -v $HOME:/sandbox/ \
+    -v /mnt:/mnt \
     -e HOME=/root/ \
     -e "QT_X11_NO_MITSHM=1" \
     -e GDK_SCALE \
@@ -66,12 +68,12 @@ docker run -it \
     -e DISPLAY=unix$DISPLAY \
     --env="DISPLAY" \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    --name=ros1-fastlio \
+    --name=ros1-x11-mnt \
     --privileged \
     --network host \
     -v /etc/timezone:/etc/timezone:ro \
     -v /etc/localtime:/etc/localtime:ro \
-    -d ros1:slam
+    -d ros1:enable-x11
 
 # attach to ros2 container
 docker attach ros1
