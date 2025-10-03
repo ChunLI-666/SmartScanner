@@ -1,0 +1,46 @@
+# Hikvision Camera Configuration for ROS2
+camera_name: "hikvision_camera"
+frame_id: "hikvision_camera"
+
+# Camera parameters
+width: 4096
+height: 3000
+offset_x: 0
+offset_y: 0
+
+# Frame rate control
+frame_rate_enable: true
+frame_rate: 8  # Maximum 8 fps
+
+# Exposure settings
+exposure_auto: false
+exposure_time: 5000  # microseconds
+auto_exposure_time_lower_limit: 100
+auto_exposure_time_upper_limit: 8000
+
+# White balance
+balance_white_auto: 1  # 0: Off, 1: Continuous, 2: Once
+
+# Brightness and gain
+brightness: 100
+gain_auto: 2  # 0: Off, 1: Once, 2: Continuous
+
+# Image processing
+calibrate_enable: false
+resize_enable: false
+destination_height: 640
+destination_width: 640
+saturation_enable: true
+saturation: 128
+
+# Trigger mode
+trigger_mode: 0  # 0: Off, 1: On
+
+# Network settings
+device_ip: "192.168.1.100"
+device_port: 3956
+user_id: "admin"
+password: "admin123"
+
+# Camera info
+camera_info_url: "package://hikvision_camera_driver/config/camera_info.yaml"

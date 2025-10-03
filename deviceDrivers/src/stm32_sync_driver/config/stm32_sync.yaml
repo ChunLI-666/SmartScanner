@@ -1,0 +1,30 @@
+# STM32 Sync Board Configuration
+device_port: "/dev/ttyUSB0"
+baud_rate: 115200
+
+# IMU settings
+imu_frame_id: "imu_link"
+imu_frequency: 100  # Hz
+
+# Sync settings
+sync_frequency: 10  # Hz
+sync_pulse_width: 100  # microseconds
+sync_delay: 0  # microseconds
+
+# Hardware sync configuration
+enable_hardware_sync: true
+sync_trigger_source: "internal"  # internal, external
+sync_trigger_polarity: "rising"  # rising, falling
+
+# Data publishing
+publish_imu: true
+publish_sync_trigger: true
+publish_status: true
+
+# Calibration
+enable_imu_calibration: false
+calibration_file: ""
+
+# Debug settings
+debug_mode: false
+log_level: "info"
